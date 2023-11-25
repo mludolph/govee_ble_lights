@@ -119,7 +119,7 @@ class GoveeBluetoothLight(LightEntity):
             red, green, blue = kwargs.get(ATTR_RGB_COLOR)
             
             if self._is_segmented:
-                commands.append(self._prepareSinglePacketData(LedCommand.COLOR, [LedMode.SEGMENTS, 0x01, red, green, blue, 0x00, 0x00, 0x00, 0x00, 0x00, 0xFF, 0x74]))
+                commands.append(self._prepareSinglePacketData(LedCommand.COLOR, [LedMode.SEGMENTS, 0x01, red, green, blue, 0x00, 0x00, 0x00, 0x00, 0x00, 0xFF, 0x7F]))
             else:
                 commands.append(self._prepareSinglePacketData(LedCommand.COLOR, [LedMode.MANUAL, red, green, blue]))
 
